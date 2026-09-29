@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ประกอบ dashboard v2: timeline ย้อนหลัง 60 วัน + คาดการ 90 วัน เลือกวันได้
    เน้นเข้าใจง่าย: ไฟจราจรคำนวณตามวันที่เลือก + แผงตัวแปรโมเดล + ป้าย 'การคาดการเชิงสถิติ'
-   เขียน dashboard.html (v1 สำรองไว้ที่ dashboard-v1.html)"""
+   เขียน dashboard-saimai.html (หน้าหลัก dashboard.html เป็นเขื่อนทั่วประเทศ, v1 สำรองไว้ที่ dashboard-v1.html)"""
 import json, glob, os, datetime
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -157,7 +157,9 @@ th:first-child,td:first-child{text-align:left}
 /* dams */
 .dam{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.85rem}
 .bar{flex:1;height:10px;background:#f1f5f9;border-radius:6px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--teal)}
+.bar i{display:block;height:100%}
+.bar i.ok{background:var(--green)}
+.bar i.warm{background:#d97706}
 .bar i.hot{background:var(--red)}
 a{color:var(--blue)}
 @media(max-width:640px){td,th{padding:5px 5px;font-size:.8rem}}
@@ -228,7 +230,7 @@ a{color:var(--blue)}
 <div class="mut" style="margin-top:24px">
 แหล่งข้อมูล: ระดับน้ำ = api-v3.thaiwater.net · ฝน/พยากรณ์ = Open-Meteo (NWP + ECMWF SEAS5) ·
 โมเดลและวิธีอ่าน: <code>docs/FORECAST.md</code> ใน repository ·
-แผนที่เขื่อน+โซนผลกระทบ: <a href="dashboard-map.html">dashboard-map.html</a> ·
+เขื่อนทั่วประเทศ + แผนที่พื้นที่ท้ายน้ำ: <a href="dashboard.html">dashboard.html</a> ·
 dashboard แบบเก่า: <a href="dashboard-v1.html">dashboard-v1.html</a><br>
 สร้างโดย cron ทุกชั่วโมง: fetch_snapshot.py &rarr; forecast_days.py &rarr; build_dashboard_v2.py
 </div>
@@ -428,14 +430,15 @@ document.getElementById('vars').innerHTML=items.map(v=>'<div class="var"><div cl
 '</div><div class="val">'+v[3]+'</div><div class="d">'+v[1]+'<br><span class="src">แหล่ง: '+v[2]+'</span></div></div>').join('');
 document.getElementById('fcnote').textContent=D.fcNote}
 
-// ---- dams ----
+// ---- dams (สีตามเกณฑ์เดียวกับแผนที่: เขียว <85 / ส้ม 85-100 / แดง >100) ----
+const damCls = p => p == null ? 'ok' : (p < 85 ? 'ok' : (p < 100 ? 'warm' : 'hot'));
 document.getElementById('damskey').innerHTML=(D.dams||[]).map(x=>
 '<div class="dam"><span style="width:70px">'+x.name+'</span><div class="bar"><i style="width:'+
-Math.min(130,x.pct/1.3)+'%" class="'+(x.pct>=100?'hot':'')+'"></i></div><span>'+x.pct.toFixed(0)+
+Math.min(130,x.pct/1.3)+'%" class="'+damCls(x.pct)+'"></i></div><span>'+x.pct.toFixed(0)+
 '% · ไหลเข้า '+(x.inflow!=null?(+x.inflow).toFixed(0):'-')+' · ระบาย '+(x.released!=null?(+x.released).toFixed(0):'-')+' ล้าน ลบ.ม./วัน</span></div>').join('');
 document.getElementById('damstop').innerHTML=(D.dams_top||[]).map(x=>
 '<div class="dam"><span style="width:70px;font-size:.8rem">'+x.name+'</span><div class="bar"><i style="width:'+
-Math.min(130,x.pct/1.3)+'%" class="'+(x.pct>=100?'hot':'')+'"></i></div><span>'+x.pct.toFixed(0)+'%</span></div>').join('');
+Math.min(130,x.pct/1.3)+'%" class="'+damCls(x.pct)+'"></i></div><span>'+x.pct.toFixed(0)+'%</span></div>').join('');
 
 // ---- near sensors ----
 (function(){const c=(D.canals||[]),r=(D.roads||[]);let h='';
@@ -459,7 +462,7 @@ first_hist = sorted({p[0] for s in stations for p in s["hist"]})
 DATA["histStart"] = first_hist[0] if first_hist else (fc["dates"][0] if fc.get("dates") else None)
 
 html = HTML.replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
-out = os.path.join(BASE, "dashboard.html")
+out = os.path.join(BASE, "dashboard-saimai.html")
 open(out, "w").write(html)
 print("OK", out, f"| stations={len(stations)} (fc={sum(1 for s in stations if s['fc'])}) "
       f"| hist {DATA['histStart']} -> fc {DATA['fcEnd']}")

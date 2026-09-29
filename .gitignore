@@ -7,3 +7,7 @@ __pycache__/
 
 # Claude/Playwright session artifacts
 .playwright-mcp/
+flood-forecast-saimai/data/geo/raw_districts.geojson
+flood-forecast-saimai/data/geo/osm/
+flood-forecast-saimai/data/geo/hydrorivers/
+flood-forecast-saimai/data/geo/hydro_th.json

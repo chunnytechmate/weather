@@ -1,0 +1,1720 @@
+{
+ "fetched_at": "2026-09-29T23:23:01",
+ "rid_date": "2026-09-29",
+ "egat_date": "29 กันยายน 2569",
+ "errors": {},
+ "dams": [
+  {
+   "name": "แม่กวงอุดมธารา",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำปิง",
+   "province": "เชียงใหม่",
+   "lat": 18.92348,
+   "lon": 99.121978,
+   "normal": 263.0,
+   "capacity": 295.0,
+   "dead": 14.0,
+   "volume": 185.96,
+   "pct": 70.71,
+   "active": 171.96,
+   "room": 77.04,
+   "inflow": 0.8,
+   "outflow": 0.92,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 185.96,
+     "pct": 70.71,
+     "inflow": 0.8,
+     "outflow": 0.92
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 185.96,
+     "pct": 70.71,
+     "inflow": 0.8,
+     "outflow": 0.92,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "กิ่วลม",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำวัง",
+   "province": "ลำปาง",
+   "lat": 18.523833,
+   "lon": 99.624806,
+   "normal": 106.22,
+   "capacity": 106.22,
+   "dead": 3.55,
+   "volume": 96.39,
+   "pct": 90.75,
+   "active": 92.84,
+   "room": 9.83,
+   "inflow": 2.31,
+   "outflow": 2.07,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 96.39,
+     "pct": 90.75,
+     "inflow": 2.31,
+     "outflow": 2.07
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 96.39,
+     "pct": 90.75,
+     "inflow": 2.31,
+     "outflow": 2.07,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "กิ่วคอหมา",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำวัง",
+   "province": "ลำปาง",
+   "lat": 18.809072,
+   "lon": 99.642272,
+   "normal": 170.0,
+   "capacity": 208.6,
+   "dead": 6.2,
+   "volume": 161.38,
+   "pct": 94.93,
+   "active": 155.18,
+   "room": 8.62,
+   "inflow": 1.06,
+   "outflow": 0.39,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 161.38,
+     "pct": 94.93,
+     "inflow": 1.06,
+     "outflow": 0.39
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 161.38,
+     "pct": 94.93,
+     "inflow": 1.06,
+     "outflow": 0.39,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "แควน้อยบำรุงแดน",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำน่าน",
+   "province": "พิษณุโลก",
+   "lat": 17.182222,
+   "lon": 100.415556,
+   "normal": 939.0,
+   "capacity": 1080.0,
+   "dead": 43.0,
+   "volume": 685.25,
+   "pct": 72.98,
+   "active": 642.25,
+   "room": 253.75,
+   "inflow": 9.86,
+   "outflow": 0.86,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 685.25,
+     "pct": 72.98,
+     "inflow": 9.86,
+     "outflow": 0.86
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 685.25,
+     "pct": 72.98,
+     "inflow": 9.86,
+     "outflow": 0.86,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "แม่มอก",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำยม",
+   "province": "ลำปาง",
+   "lat": 17.3201,
+   "lon": 99.4518,
+   "normal": 110.0,
+   "capacity": 110.0,
+   "dead": 15.9,
+   "volume": 71.78,
+   "pct": 65.25,
+   "active": 55.88,
+   "room": 38.22,
+   "inflow": 7.19,
+   "outflow": 0.16,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 71.78,
+     "pct": 65.25,
+     "inflow": 7.19,
+     "outflow": 0.16
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 71.78,
+     "pct": 65.25,
+     "inflow": 7.19,
+     "outflow": 0.16,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ภูมิพล",
+   "region": "ภาคเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำปิง",
+   "province": "ตาก",
+   "lat": 17.241944,
+   "lon": 98.971456,
+   "normal": 13462.0,
+   "capacity": 13462.0,
+   "dead": 3800.0,
+   "volume": 8642.05,
+   "pct": 64.2,
+   "active": 4842.05,
+   "room": 4819.95,
+   "inflow": 133.37,
+   "outflow": 3.0,
+   "spill": 0.0,
+   "urc_pct": 85.0952,
+   "lrc_pct": 53.6089,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 8642.05,
+     "pct": 64.2,
+     "inflow": 133.37,
+     "outflow": 3.0
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 8642.05,
+     "pct": 64.2,
+     "inflow": 133.37,
+     "outflow": 3.0,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 8642.0,
+     "pct": 64.1959
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "สิริกิติ์",
+   "region": "ภาคเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำน่าน",
+   "province": "อุตรดิตถ์",
+   "lat": 17.768056,
+   "lon": 100.554936,
+   "normal": 9510.0,
+   "capacity": 10508.0,
+   "dead": 2850.0,
+   "volume": 7624.68,
+   "pct": 80.18,
+   "active": 4774.68,
+   "room": 1885.32,
+   "inflow": 18.08,
+   "outflow": 8.01,
+   "spill": 0.0,
+   "urc_pct": 91.9312,
+   "lrc_pct": 64.8965,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 7624.68,
+     "pct": 80.18,
+     "inflow": 18.08,
+     "outflow": 8.01
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 7624.68,
+     "pct": 80.18,
+     "inflow": 18.08,
+     "outflow": 8.01,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 7625.0,
+     "pct": 80.1754
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "แม่งัดสมบูรณ์ชล",
+   "region": "ภาคเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำปิง",
+   "province": "เชียงใหม่",
+   "lat": 19.16138,
+   "lon": 99.04011,
+   "normal": 265.0,
+   "capacity": 323.0,
+   "dead": 12.0,
+   "volume": 245.57,
+   "pct": 92.67,
+   "active": 233.57,
+   "room": 19.43,
+   "inflow": 0.84,
+   "outflow": 0.51,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 245.57,
+     "pct": 92.67,
+     "inflow": 0.84,
+     "outflow": 0.51
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 245.57,
+     "pct": 92.78,
+     "inflow": 0.84,
+     "outflow": 0.51,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ห้วยหลวง",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำโขงตะวันออกเฉียงเหนือ",
+   "province": "อุดรธานี",
+   "lat": 17.3604,
+   "lon": 102.5724,
+   "normal": 135.57,
+   "capacity": 135.57,
+   "dead": 6.59,
+   "volume": 86.54,
+   "pct": 63.83,
+   "active": 79.95,
+   "room": 49.03,
+   "inflow": 0.9,
+   "outflow": 0.08,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 86.54,
+     "pct": 63.83,
+     "inflow": 0.9,
+     "outflow": 0.08
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 86.54,
+     "pct": 63.83,
+     "inflow": 0.9,
+     "outflow": 0.08,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "น้ำอูน",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำโขงตะวันออกเฉียงเหนือ",
+   "province": "สกลนคร",
+   "lat": 17.3,
+   "lon": 103.75,
+   "normal": 520.0,
+   "capacity": 780.0,
+   "dead": 45.0,
+   "volume": 329.38,
+   "pct": 63.34,
+   "active": 284.38,
+   "room": 190.62,
+   "inflow": 0.28,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 329.38,
+     "pct": 63.34,
+     "inflow": 0.28,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 329.38,
+     "pct": 63.34,
+     "inflow": 0.28,
+     "outflow": 0.0,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ลำปาว",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำชี",
+   "province": "กาฬสินธุ์",
+   "lat": 16.60243,
+   "lon": 103.4385,
+   "normal": 1980.0,
+   "capacity": 2450.0,
+   "dead": 100.0,
+   "volume": 1208.82,
+   "pct": 61.05,
+   "active": 1108.82,
+   "room": 771.18,
+   "inflow": 7.04,
+   "outflow": 4.04,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 1208.82,
+     "pct": 61.05,
+     "inflow": 7.04,
+     "outflow": 4.04
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 1208.82,
+     "pct": 61.05,
+     "inflow": 7.04,
+     "outflow": 4.04,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ลำตะคอง",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "นครราชสีมา",
+   "lat": 14.865,
+   "lon": 101.561667,
+   "normal": 314.49,
+   "capacity": 445.0,
+   "dead": 22.7,
+   "volume": 204.36,
+   "pct": 64.98,
+   "active": 181.66,
+   "room": 110.13,
+   "inflow": 19.19,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 204.36,
+     "pct": 64.98,
+     "inflow": 19.19,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 204.36,
+     "pct": 64.98,
+     "inflow": 19.19,
+     "outflow": 0.0,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ลำพระเพลิง",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "นครราชสีมา",
+   "lat": 14.594286,
+   "lon": 101.839596,
+   "normal": 155.0,
+   "capacity": 242.0,
+   "dead": 1.4,
+   "volume": 124.19,
+   "pct": 80.12,
+   "active": 122.79,
+   "room": 30.81,
+   "inflow": 6.29,
+   "outflow": 1.34,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 124.19,
+     "pct": 80.12,
+     "inflow": 6.29,
+     "outflow": 1.34
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 124.19,
+     "pct": 80.12,
+     "inflow": 6.29,
+     "outflow": 1.34,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "มูลบน",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "นครราชสีมา",
+   "lat": 14.484167,
+   "lon": 102.147056,
+   "normal": 141.0,
+   "capacity": 350.0,
+   "dead": 7.0,
+   "volume": 75.63,
+   "pct": 53.64,
+   "active": 68.63,
+   "room": 65.37,
+   "inflow": 2.62,
+   "outflow": 0.03,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 75.63,
+     "pct": 53.64,
+     "inflow": 2.62,
+     "outflow": 0.03
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 75.63,
+     "pct": 53.64,
+     "inflow": 2.62,
+     "outflow": 0.03,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ลำแชะ",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "นครราชสีมา",
+   "lat": 14.415833,
+   "lon": 102.2774,
+   "normal": 275.0,
+   "capacity": 325.0,
+   "dead": 7.0,
+   "volume": 160.25,
+   "pct": 58.27,
+   "active": 153.25,
+   "room": 114.75,
+   "inflow": 3.54,
+   "outflow": 0.03,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 160.25,
+     "pct": 58.27,
+     "inflow": 3.54,
+     "outflow": 0.03
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 160.25,
+     "pct": 58.27,
+     "inflow": 3.54,
+     "outflow": 0.03,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ลำนางรอง",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "บุรีรัมย์",
+   "lat": 14.299444,
+   "lon": 102.759722,
+   "normal": 121.41,
+   "capacity": 196.67,
+   "dead": 3.0,
+   "volume": 57.3,
+   "pct": 47.2,
+   "active": 54.3,
+   "room": 64.11,
+   "inflow": 0.74,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 57.3,
+     "pct": 47.2,
+     "inflow": 0.74,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 57.3,
+     "pct": 47.2,
+     "inflow": 0.74,
+     "outflow": 0.0,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "น้ำพุง",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำโขงตะวันออกเฉียงเหนือ",
+   "province": "สกลนคร",
+   "lat": 16.971667,
+   "lon": 103.938048,
+   "normal": 165.0,
+   "capacity": 200.0,
+   "dead": 8.0,
+   "volume": 82.61,
+   "pct": 50.07,
+   "active": 74.61,
+   "room": 82.39,
+   "inflow": 0.2,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": 71.628,
+   "lrc_pct": 41.9628,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 82.61,
+     "pct": 50.07,
+     "inflow": 0.2,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 82.61,
+     "pct": 50.07,
+     "inflow": 0.2,
+     "outflow": 0.0,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 83.0,
+     "pct": 49.9214
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "จุฬาภรณ์",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำชี",
+   "province": "ชัยภูมิ",
+   "lat": 16.533333,
+   "lon": 101.654593,
+   "normal": 164.0,
+   "capacity": 181.0,
+   "dead": 37.0,
+   "volume": 120.47,
+   "pct": 73.46,
+   "active": 83.47,
+   "room": 43.53,
+   "inflow": 3.04,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": 84.4031,
+   "lrc_pct": 58.9679,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 120.47,
+     "pct": 73.46,
+     "inflow": 3.04,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 120.47,
+     "pct": 73.46,
+     "inflow": 3.04,
+     "outflow": 0.0,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 120.0,
+     "pct": 73.5695
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "อุบลรัตน์",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำชี",
+   "province": "ขอนแก่น",
+   "lat": 16.770278,
+   "lon": 102.621325,
+   "normal": 2431.0,
+   "capacity": 2431.0,
+   "dead": 581.0,
+   "volume": 1198.38,
+   "pct": 49.3,
+   "active": 617.38,
+   "room": 1232.62,
+   "inflow": 31.94,
+   "outflow": 1.01,
+   "spill": 0.0,
+   "urc_pct": 61.02,
+   "lrc_pct": 36.1535,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 1198.38,
+     "pct": 49.3,
+     "inflow": 31.94,
+     "outflow": 1.01
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 1198.38,
+     "pct": 49.3,
+     "inflow": 31.94,
+     "outflow": 1.01,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 1198.0,
+     "pct": 49.2897
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "สิรินธร",
+   "region": "ภาคตะวันออกเฉียงเหนือ",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "อุบลราชธานี",
+   "lat": 15.202778,
+   "lon": 105.42089,
+   "normal": 1966.0,
+   "capacity": 1966.0,
+   "dead": 831.38,
+   "volume": 1798.36,
+   "pct": 91.47,
+   "active": 966.98,
+   "room": 167.64,
+   "inflow": 6.72,
+   "outflow": 8.63,
+   "spill": 0.0,
+   "urc_pct": 91.8682,
+   "lrc_pct": 74.8153,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 1798.36,
+     "pct": 91.47,
+     "inflow": 6.72,
+     "outflow": 8.63
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 1798.36,
+     "pct": 91.47,
+     "inflow": 6.72,
+     "outflow": 8.63,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 1798.0,
+     "pct": 91.4512
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ป่าสักชลสิทธิ์",
+   "region": "ภาคกลาง",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำป่าสัก",
+   "province": "สระบุรี",
+   "lat": 14.856944,
+   "lon": 101.076111,
+   "normal": 871.5,
+   "capacity": 1036.16,
+   "dead": 14.64,
+   "volume": 891.26,
+   "pct": 102.27,
+   "active": 876.62,
+   "room": -19.76,
+   "inflow": 52.95,
+   "outflow": 2.16,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 891.26,
+     "pct": 102.27,
+     "inflow": 52.95,
+     "outflow": 2.16
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 891.26,
+     "pct": 102.27,
+     "inflow": 52.95,
+     "outflow": 2.16,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ทับเสลา",
+   "region": "ภาคกลาง",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำสะแกกรัง",
+   "province": "อุทัยธานี",
+   "lat": 15.534533,
+   "lon": 99.450405,
+   "normal": 160.0,
+   "capacity": 190.0,
+   "dead": 17.0,
+   "volume": 99.22,
+   "pct": 62.01,
+   "active": 82.22,
+   "room": 60.78,
+   "inflow": 10.48,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 99.22,
+     "pct": 62.01,
+     "inflow": 10.48,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 99.22,
+     "pct": 62.01,
+     "inflow": 10.48,
+     "outflow": 0.0,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "กระเสียว",
+   "region": "ภาคกลาง",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำท่าจีน",
+   "province": "สุพรรณบุรี",
+   "lat": 14.830645,
+   "lon": 99.661749,
+   "normal": 299.0,
+   "capacity": 390.0,
+   "dead": 40.0,
+   "volume": 98.0,
+   "pct": 32.78,
+   "active": 58.0,
+   "room": 201.0,
+   "inflow": 15.16,
+   "outflow": 0.06,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 98.0,
+     "pct": 32.78,
+     "inflow": 15.16,
+     "outflow": 0.06
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 98.0,
+     "pct": 32.78,
+     "inflow": 15.16,
+     "outflow": 0.06,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ศรีนครินทร์",
+   "region": "ภาคตะวันตก",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำแม่กลอง",
+   "province": "กาญจนบุรี",
+   "lat": 14.4,
+   "lon": 99.120667,
+   "normal": 17745.0,
+   "capacity": 18770.0,
+   "dead": 10265.0,
+   "volume": 16374.14,
+   "pct": 92.27,
+   "active": 6109.14,
+   "room": 1370.86,
+   "inflow": 240.93,
+   "outflow": 2.01,
+   "spill": 0.0,
+   "urc_pct": 96.539,
+   "lrc_pct": 72.5356,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 16374.14,
+     "pct": 92.27,
+     "inflow": 240.93,
+     "outflow": 2.01
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 16374.14,
+     "pct": 92.27,
+     "inflow": 240.93,
+     "outflow": 2.01,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 16374.0,
+     "pct": 92.2747
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "วชิราลงกรณ",
+   "region": "ภาคตะวันตก",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำแม่กลอง",
+   "province": "กาญจนบุรี",
+   "lat": 14.7975,
+   "lon": 98.60411,
+   "normal": 8860.0,
+   "capacity": 11000.0,
+   "dead": 3012.0,
+   "volume": 8533.56,
+   "pct": 96.32,
+   "active": 5521.56,
+   "room": 326.44,
+   "inflow": 287.63,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": 98.8278,
+   "lrc_pct": 65.4773,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 8533.56,
+     "pct": 96.32,
+     "inflow": 287.63,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 8533.56,
+     "pct": 96.32,
+     "inflow": 287.63,
+     "outflow": 0.0,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 8534.0,
+     "pct": 96.3156
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ขุนด่านปราการชล",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำบางปะกง",
+   "province": "นครนายก",
+   "lat": 14.314722,
+   "lon": 101.321389,
+   "normal": 224.0,
+   "capacity": 224.9,
+   "dead": 4.52,
+   "volume": 217.17,
+   "pct": 96.95,
+   "active": 212.65,
+   "room": 6.83,
+   "inflow": 11.48,
+   "outflow": 13.41,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 217.17,
+     "pct": 96.95,
+     "inflow": 11.48,
+     "outflow": 13.41
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 217.17,
+     "pct": 96.95,
+     "inflow": 11.48,
+     "outflow": 13.41,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "คลองสียัด",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำบางปะกง",
+   "province": "ฉะเชิงเทรา",
+   "lat": 13.431944,
+   "lon": 101.647778,
+   "normal": 420.0,
+   "capacity": 450.0,
+   "dead": 30.0,
+   "volume": 420.0,
+   "pct": 100.0,
+   "active": 390.0,
+   "room": 0.0,
+   "inflow": 48.54,
+   "outflow": 43.41,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 420.0,
+     "pct": 100.0,
+     "inflow": 48.54,
+     "outflow": 43.41
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 420.0,
+     "pct": 100.0,
+     "inflow": 48.54,
+     "outflow": 43.41,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "บางพระ",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำชายฝั่งทะเลตะวันออก",
+   "province": "ชลบุรี",
+   "lat": 13.221432,
+   "lon": 100.966202,
+   "normal": 117.0,
+   "capacity": 127.0,
+   "dead": 12.06,
+   "volume": 90.39,
+   "pct": 77.26,
+   "active": 78.33,
+   "room": 26.61,
+   "inflow": 1.51,
+   "outflow": 0.27,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 90.39,
+     "pct": 77.26,
+     "inflow": 1.51,
+     "outflow": 0.27
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 90.39,
+     "pct": 77.26,
+     "inflow": 1.51,
+     "outflow": 0.27,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "หนองปลาไหล",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำชายฝั่งทะเลตะวันออก",
+   "province": "ระยอง",
+   "lat": 12.934647,
+   "lon": 101.297011,
+   "normal": 163.75,
+   "capacity": 205.85,
+   "dead": 13.5,
+   "volume": 144.47,
+   "pct": 88.23,
+   "active": 130.97,
+   "room": 19.28,
+   "inflow": 10.05,
+   "outflow": 0.43,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 144.47,
+     "pct": 88.23,
+     "inflow": 10.05,
+     "outflow": 0.43
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 144.47,
+     "pct": 88.23,
+     "inflow": 10.05,
+     "outflow": 0.43,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ประแสร์",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำชายฝั่งทะเลตะวันออก",
+   "province": "ระยอง",
+   "lat": 12.977205,
+   "lon": 101.558297,
+   "normal": 295.0,
+   "capacity": 322.0,
+   "dead": 20.0,
+   "volume": 338.0,
+   "pct": 114.58,
+   "active": 318.0,
+   "room": -43.0,
+   "inflow": 33.19,
+   "outflow": 33.2,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 338.0,
+     "pct": 114.58,
+     "inflow": 33.19,
+     "outflow": 33.2
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 338.0,
+     "pct": 114.58,
+     "inflow": 33.19,
+     "outflow": 33.2,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "นฤบดินทรจินดา",
+   "region": "ภาคตะวันออก",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำบางปะกง",
+   "province": "ปราจีนบุรี",
+   "lat": 14.080838,
+   "lon": 102.027308,
+   "normal": 295.0,
+   "capacity": 338.0,
+   "dead": 14.25,
+   "volume": 270.41,
+   "pct": 91.66,
+   "active": 256.16,
+   "room": 24.59,
+   "inflow": 5.47,
+   "outflow": null,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 270.41,
+     "pct": 91.66,
+     "inflow": 5.47,
+     "outflow": null
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 270.41,
+     "pct": 91.66,
+     "inflow": 5.47,
+     "outflow": 0.0,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ปราณบุรี",
+   "region": "ภาคใต้",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำเพชรบุรี-ประจวบคีรีขันธ์",
+   "province": "ประจวบคีรีขันธ์",
+   "lat": 12.451389,
+   "lon": 99.816667,
+   "normal": 391.0,
+   "capacity": 490.0,
+   "dead": 17.59,
+   "volume": 297.91,
+   "pct": 76.19,
+   "active": 280.32,
+   "room": 93.09,
+   "inflow": 24.25,
+   "outflow": 1.44,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 297.91,
+     "pct": 76.19,
+     "inflow": 24.25,
+     "outflow": 1.44
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 297.91,
+     "pct": 76.19,
+     "inflow": 24.25,
+     "outflow": 1.44,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "แก่งกระจาน",
+   "region": "ภาคใต้",
+   "owner": "กรมชลประทาน",
+   "basin": "ลุ่มน้ำเพชรบุรี-ประจวบคีรีขันธ์",
+   "province": "เพชรบุรี",
+   "lat": 12.917017,
+   "lon": 99.629886,
+   "normal": 710.0,
+   "capacity": 900.0,
+   "dead": 65.0,
+   "volume": 700.91,
+   "pct": 98.72,
+   "active": 635.91,
+   "room": 9.09,
+   "inflow": 39.39,
+   "outflow": 8.64,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 700.91,
+     "pct": 98.72,
+     "inflow": 39.39,
+     "outflow": 8.64
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 700.91,
+     "pct": 98.72,
+     "inflow": 39.39,
+     "outflow": 8.64,
+     "agency": "RID"
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "รัชชประภา",
+   "region": "ภาคใต้",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำภาคใต้ฝั่งตะวันออกตอนบน",
+   "province": "สุราษฎร์ธานี",
+   "lat": 9.054554,
+   "lon": 98.670247,
+   "normal": 5638.84,
+   "capacity": 6144.0,
+   "dead": 1351.54,
+   "volume": 4158.11,
+   "pct": 73.74,
+   "active": 2806.57,
+   "room": 1480.73,
+   "inflow": 12.82,
+   "outflow": 3.44,
+   "spill": 0.0,
+   "urc_pct": 95.6424,
+   "lrc_pct": 62.4957,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 4158.11,
+     "pct": 73.74,
+     "inflow": 12.82,
+     "outflow": 3.44
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 4158.11,
+     "pct": 73.74,
+     "inflow": 12.82,
+     "outflow": 3.44,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 4158.0,
+     "pct": 73.7405
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "บางลาง",
+   "region": "ภาคใต้",
+   "owner": "การไฟฟ้า",
+   "basin": "ลุ่มน้ำภาคใต้ฝั่งตะวันออกตอนล่าง",
+   "province": "ยะลา",
+   "lat": 6.15473,
+   "lon": 101.273,
+   "normal": 1454.36,
+   "capacity": 1590.0,
+   "dead": 276.28,
+   "volume": 750.57,
+   "pct": 51.61,
+   "active": 474.29,
+   "room": 703.79,
+   "inflow": 2.29,
+   "outflow": 4.03,
+   "spill": 0.0,
+   "urc_pct": 66.2426,
+   "lrc_pct": 41.9674,
+   "run_of_river": false,
+   "primary": "RID",
+   "sources": {
+    "RID": {
+     "date": "2026-09-29",
+     "volume": 750.57,
+     "pct": 51.61,
+     "inflow": 2.29,
+     "outflow": 4.03
+    },
+    "HII": {
+     "date": "2026-09-29",
+     "volume": 750.57,
+     "pct": 51.61,
+     "inflow": 2.29,
+     "outflow": 4.03,
+     "agency": "RID"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 751.0,
+     "pct": 51.6083
+    }
+   },
+   "checks": {
+    "HII": true,
+    "EGAT": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ห้วยกุ่ม",
+   "region": null,
+   "owner": "EGAT",
+   "basin": "ลุ่มน้ำชี",
+   "province": "ชัยภูมิ",
+   "lat": 16.413056,
+   "lon": 101.797222,
+   "normal": 20.23,
+   "capacity": 25.14,
+   "dead": 20.14,
+   "volume": 20.0,
+   "pct": 99.5354,
+   "active": -0.14,
+   "room": 0.23,
+   "inflow": 1.15,
+   "outflow": 0.39,
+   "spill": 0.0,
+   "urc_pct": 95.9652,
+   "lrc_pct": 52.0905,
+   "run_of_river": false,
+   "primary": "EGAT",
+   "sources": {
+    "HII": {
+     "date": "2026-09-28",
+     "volume": 20.14,
+     "pct": 99.56,
+     "inflow": 1.15,
+     "outflow": 0.39,
+     "agency": "EGAT"
+    },
+    "EGAT": {
+     "date": "29 กันยายน 2569",
+     "volume": 20.0,
+     "pct": 99.5354
+    }
+   },
+   "checks": {
+    "HII": true
+   },
+   "verdict": "agree"
+  },
+  {
+   "name": "ท่าทุ่งนา",
+   "region": null,
+   "owner": "EGAT",
+   "basin": "ลุ่มน้ำแม่กลอง",
+   "province": "กาญจนบุรี",
+   "lat": 14.216667,
+   "lon": 99.233333,
+   "normal": 50.08,
+   "capacity": null,
+   "dead": 46.04,
+   "volume": 46.04,
+   "pct": 91.93,
+   "active": 0.0,
+   "room": 4.04,
+   "inflow": 0.0,
+   "outflow": 2.01,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": false,
+   "primary": "HII",
+   "sources": {
+    "HII": {
+     "date": "2026-09-28",
+     "volume": 46.04,
+     "pct": 91.93,
+     "inflow": 0.0,
+     "outflow": 2.01,
+     "agency": "EGAT"
+    }
+   },
+   "checks": {},
+   "verdict": "single"
+  },
+  {
+   "name": "ปากมูล",
+   "region": null,
+   "owner": "EGAT",
+   "basin": "ลุ่มน้ำมูล",
+   "province": "อุบลราชธานี",
+   "lat": 15.282103,
+   "lon": 105.466051,
+   "normal": 229.6,
+   "capacity": null,
+   "dead": 0.0,
+   "volume": 0.0,
+   "pct": 0.0,
+   "active": 0.0,
+   "room": 229.6,
+   "inflow": 0.0,
+   "outflow": 0.0,
+   "spill": 0.0,
+   "urc_pct": null,
+   "lrc_pct": null,
+   "run_of_river": true,
+   "primary": "HII",
+   "sources": {
+    "HII": {
+     "date": "2026-09-28",
+     "volume": 0.0,
+     "pct": 0.0,
+     "inflow": 0.0,
+     "outflow": 0.0,
+     "agency": "EGAT"
+    }
+   },
+   "checks": {},
+   "verdict": "single"
+  }
+ ]
+}
