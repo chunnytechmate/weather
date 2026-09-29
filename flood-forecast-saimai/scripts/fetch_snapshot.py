@@ -64,9 +64,39 @@ for s in get("https://api-v3.thaiwater.net/api/v1/thaiwater30/public/waterlevel_
                      "bank": bank, "dt": s.get("waterlevel_datetime"),
                      "lat": st.get("tele_station_lat"), "lon": st.get("tele_station_long")})
 
-dams = []
+dams, dams_all = [], []
 try:
     dd = get("https://api-v3.thaiwater.net/api/v1/thaiwater30/analyst/dam")["data"]
+    # เก็บเขื่อนใหญ่ทั้งประเทศ (dam_daily ~39 แห่ง) ไว้สะสมประวัติสำหรับ fit โมเดล
+    # ไม่ผ่าน filter DAMS — ใช้ค้นสถานการณ์ลุ่มน้ำอื่นนอกเจ้าพระยา
+    for x in dd.get("dam_daily", []):
+        dmeta = x.get("dam") or {}
+        pct = x.get("dam_storage_percent")
+        if pct is None:
+            continue
+        try:
+            pct = float(pct)
+        except (TypeError, ValueError):
+            continue
+        dams_all.append({"name": (dmeta.get("dam_name") or {}).get("th", ""),
+                         "agency": ((x.get("agency") or {}).get("agency_shortname") or {}).get("en", ""),
+                         "basin": ((x.get("basin") or {}).get("basin_name") or {}).get("th", ""),
+                         "province": ((x.get("geocode") or {}).get("province_name") or {}).get("th", ""),
+                         "level_m": x.get("dam_level"),
+                         "storage_mcm": x.get("dam_storage"), "storage_pct": pct,
+                         "max_storage_mcm": dmeta.get("max_storage"),
+                         "normal_storage_mcm": dmeta.get("normal_storage"),
+                         "inflow": x.get("dam_inflow"), "released": x.get("dam_uses_water"),
+                         "released_mcm": x.get("dam_released"),
+                         "spill": x.get("dam_spilled"), "date": x.get("dam_date"),
+                         "lat": dmeta.get("dam_lat"), "lon": dmeta.get("dam_long")})
+    # dedupe ชื่อซ้ำ (บางเขื่อนมีทั้ง record วันนี้+เมื่อวาน) เก็บ record วันที่ล่าสุด
+    _latest = {}
+    for d in dams_all:
+        k = d["name"]
+        if k not in _latest or str(d["date"] or "") > str(_latest[k]["date"] or ""):
+            _latest[k] = d
+    dams_all = sorted(_latest.values(), key=lambda d: -d["storage_pct"])
     for sec in ("dam_daily", "dam_medium", "dam_hourly"):
         for x in dd.get(sec, []):
             dmeta = x.get("dam") or {}
@@ -155,7 +185,8 @@ except Exception as e:
     print("WARN seasonal soi:", e)
 
 snap = {"fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
-        "stations": stations, "dams": dams, "canals": canals, "roads": roads,
+        "stations": stations, "dams": dams, "dams_all": dams_all,
+        "canals": canals, "roads": roads,
         "wx_daily": wx.get("daily"), "wx_hourly_time": wx["hourly"]["time"],
         "wx_hourly_precip": wx["hourly"]["precipitation"], "wx_north": wx_north,
         "wx_seasonal": wx_seasonal}
@@ -165,7 +196,7 @@ json.dump(snap, open(out, "w"), ensure_ascii=False)
 print(f"OK {out}")
 print(f"  stations={len(stations)} (headwater={sum(1 for s in stations if s['group']=='headwater')}, "
       f"rapipat={sum(1 for s in stations if s['group']=='rapipat')}) dams={len(dams)} "
-      f"canals={len(canals)} roads={len(roads)} wx_north={len(wx_north)}")
+      f"dams_all={len(dams_all)} canals={len(canals)} roads={len(roads)} wx_north={len(wx_north)}")
 missing = set(WANT) - {s["key"] for s in stations}
 if missing:
     print("  WARN missing stations:", missing)
