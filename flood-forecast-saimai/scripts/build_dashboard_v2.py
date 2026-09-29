@@ -70,7 +70,7 @@ rain_north = [[t, round(nsum[t] / ncnt[t], 1)] for t in sorted(nsum)]
 
 # ---- เขื่อน ----
 dams = [{"name": d["name"], "pct": d.get("storage_pct"), "inflow": d.get("inflow"),
-         "released": d.get("released")} for d in sn.get("dams", [])]
+         "released": d.get("released_daily")} for d in sn.get("dams", [])]
 dams_top = [{"name": d["name"], "pct": d.get("storage_pct"), "basin": d.get("basin", "")}
             for d in sorted(sn.get("dams_all", []), key=lambda x: -x.get("storage_pct", 0))[:8]]
 
@@ -85,7 +85,8 @@ DATA = {
     "today": sn["fetched_at"][:10],
     "nwp_days": fc.get("nwp_days", 16), "seasonal_trust": fc.get("seasonal_trust", 35),
     "horizon": fc.get("horizon", 90), "dam_release_mcm": fc.get("dam_release_mcm"),
-    "v_bpa": fc.get("v_bpa"), "bpa_excess": fc.get("bpa_excess"),
+    "v_bpa": fc.get("v_bpa"), "dam_inflow_mcm": fc.get("dam_inflow_mcm"),
+    "bpa_excess": fc.get("bpa_excess"),
     "stations": stations, "rain_soi": rain_soi, "rain_north": rain_north,
     "dams": dams, "dams_top": dams_top, "canal_k2": canal_k2,
     "canals": sn.get("canals", []), "roads": sn.get("roads", []),
@@ -227,6 +228,7 @@ a{color:var(--blue)}
 <div class="mut" style="margin-top:24px">
 แหล่งข้อมูล: ระดับน้ำ = api-v3.thaiwater.net · ฝน/พยากรณ์ = Open-Meteo (NWP + ECMWF SEAS5) ·
 โมเดลและวิธีอ่าน: <code>docs/FORECAST.md</code> ใน repository ·
+แผนที่เขื่อน+โซนผลกระทบ: <a href="dashboard-map.html">dashboard-map.html</a> ·
 dashboard แบบเก่า: <a href="dashboard-v1.html">dashboard-v1.html</a><br>
 สร้างโดย cron ทุกชั่วโมง: fetch_snapshot.py &rarr; forecast_days.py &rarr; build_dashboard_v2.py
 </div>
@@ -418,7 +420,7 @@ const items=[
 ['ฝน seasonal (วัน 17-35)','ECMWF SEAS5 เรียบด้วย rolling mean 5 วัน เป็นสถานการณ์คาดหมาย','Open-Meteo Seasonal',''],
 ['สถิติฤดูกาล (วัน 36-90)','SEAS5 ระยะไกลเสื่อมสภาพ อ่านเป็นแนวโน้มเท่านั้น','climatology',''],
 ['wave บางปะอิน','ส่วนเกินเหนือตลิ่งบางปะอิน x0.30 ลากลงมา 1 วัน ต่อตอน = มวลน้ำเหนือ','คำนวณเอง','เหนือตลิ่ง '+(D.bpa_excess>0?'+':'')+D.bpa_excess+' ม.'],
-['แรงระบายเขื่อน (ใหม่)','ภูมิพล+สิริกิติ์ ระบายเกิน '+40+' ล้าน ลบ.ม./วัน จะหนุนบางปะอิน ใน 3-8 วัน (ยังไม่ calibrate)','thaiwater analyst/dam',(D.dam_release_mcm||0).toFixed(0)+' ล้าน ลบ.ม./วัน'],
+['น้ำไหลเข้าเขื่อน (ใหม่)','ภูมิพล+สิริกิติ์ รวมกัน เกิน 150 ล้าน ลบ.ม./วัน = กดดันให้ต้องระบาย หนุนบางปะอินใน 3-8 วัน (ยังไม่ calibrate)','thaiwater analyst/dam',(D.dam_inflow_mcm||0).toFixed(0)+' ล้าน ลบ.ม./วัน'],
 ['ตัวคูณน้ำหนุน','คำนวณจากเฟสดวงจันทร์ spring ~0.45 (ระบายช้า) ถึง neap 1.0','ดาราศาสตร์','วันที่เลือก '+tideMult(d).toFixed(2)],
 ['K, rain_coef ต่อสถานี','อัตราร่อง/recession ตั้งมือจากสถิติน้ำหลากปี 2554 ยังไม่ fit จากข้อมูลจริง','สถิติปี 2554',''],
 ];

@@ -108,7 +108,9 @@ try:
                 continue
             dams.append({"name": nm, "storage_mcm": x.get("dam_storage"),
                          "storage_pct": float(pct), "inflow": x.get("dam_inflow"),
-                         "released": x.get("dam_uses_water"), "spill": x.get("dam_spilled"),
+                         "released": x.get("dam_uses_water"),
+                         "released_daily": x.get("dam_released"),
+                         "spill": x.get("dam_spilled"),
                          "date": x.get("dam_date"), "lat": dmeta.get("dam_lat"),
                          "lon": dmeta.get("dam_long"), "src": sec})
     seen = set()

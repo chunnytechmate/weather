@@ -8,7 +8,7 @@
    - tier 3 (วัน 36-90): SEAS5 เสื่อมสภาพแล้ว อ่านเป็นแนวโน้มสถิติฤดูกาลเท่านั้น
 
    ตัวแปรทั้งหมด: h0/momentum จากค่าอ่าน 18 ชม. + wave บางปะอิน + ฝนเหนือ lag 3 + ฝนท้องถิ่น
-   + แรงระบายเขื่อนภูมิพล/สิริกิติ์ lag 3-8 วัน (ใหม่, ยังไม่ calibrate) + ตัวคูณน้ำหนุนจากเฟสดวงจันทร์"""
+   + น้ำไหลเข้าเขื่อนภูมิพล/สิริกิติ์ lag 3-8 วัน (ใหม่, ยังไม่ calibrate) + ตัวคูณน้ำหนุนจากเฟสดวงจันทร์"""
 import json, glob, os, datetime, math
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -239,21 +239,22 @@ def build():
     wd = sn.get("wx_daily", {})
     soi_by_day = dict(zip(wd.get("time", []), wd.get("precipitation_sum", [])))
 
-    # ---- dam release ภูมิพล+สิริกิติ์ (ล้าน ลบ.ม./วัน): ตัวแปรใหม่ 28/9/69 ----
-    # แรงหนุนต่อเนื่องเมื่อเขื่อนระบายมากกว่าภาวะปกติ ลากถึงบางปะอิน ~3-8 วัน
+    # ---- น้ำไหลเข้าเขื่อน ภูมิพล+สิริกิติ์ (ล้าน ลบ.ม./วัน): ตัวแปรใหม่ 29/9/69 ----
+    # inflow สูงต่อเนื่อง = กดดันให้ต้องระบาย ผลลากถึงบางปะอิน ~3-8 วัน
+    # (ใช้ inflow แทนค่าระบาย เพราะ thaiwater ส่ง dam_uses_water เป็นยอดสะสมรายปี ส่วน dam_released มีเฉพาะระบายผ่านทางระบาย)
     # สัมประสิทธิ์อนุรักษ์นิยม + มี cap เพราะยังไม่ได้ calibrate กับเหตุการณ์จริง
-    DAM_REL_BASE = 40.0
-    dam_rel = 0.0
+    DAM_IN_BASE = 150.0
+    dam_in = 0.0
     for d in sn.get("dams", []):
-        if any(k in d["name"] for k in ("ภูมิพล", "สิริกิติ์")) and d.get("released"):
+        if any(k in d["name"] for k in ("ภูมิพล", "สิริกิติ์")) and d.get("inflow"):
             try:
-                dam_rel += float(d["released"])
+                dam_in += float(d["inflow"])
             except (TypeError, ValueError):
                 pass
 
     def dam_push(i):
         if 3 <= i + 1 <= 8:
-            return min(0.04, max(0.0, dam_rel - DAM_REL_BASE) / 800.0)
+            return min(0.03, max(0.0, dam_in - DAM_IN_BASE) / 1000.0)
         return 0.0
 
     # ---- สถานะบางปะอิน (ต้นน้ำเข้าเมือง): momentum + ระดับเหนือตลิ่ง ----
@@ -367,12 +368,12 @@ def build():
 
     result = {"built_at": sn["fetched_at"], "dates": dates, "nwp_days": NWP_DAYS,
               "seasonal_trust": SEASONAL_TRUST, "horizon": HORIZON,
-              "v_bpa": round(v_bpa, 3), "dam_release_mcm": round(dam_rel, 1),
+              "v_bpa": round(v_bpa, 3), "dam_inflow_mcm": round(dam_in, 1),
               "bpa_excess": round(bpa_h0 - bank_bpa, 2),
               "north_by_day": {k: round(v, 1) for k, v in north_nwp.items()},
               "stations": out_st,
               "note": ("โมเดล lag-route 90 วัน: h(t)=h(t-1)+rise−drain · rise = wave จากส่วนเกินเหนือตลิ่งบางปะอิน×0.30 (lag 1 วัน/ตอน) "
-                       "+ ฝนเหนือ lag 3 วัน + ฝนท้องถิ่น + momentum สถานี + แรงระบายเขื่อนภูมิพล+สิริกิติ์ lag 3-8 วัน (ใหม่ ยังไม่ calibrate) "
+                       "+ ฝนเหนือ lag 3 วัน + ฝนท้องถิ่น + momentum สถานี + น้ำไหลเข้าเขื่อนภูมิพล+สิริกิติ์ lag 3-8 วัน (ใหม่ ยังไม่ calibrate) "
                        "· drain = K × ตัวคูณน้ำหนุน (เฟสดวงจันทร์: 1.0 น้ำแล้ง → ~0.45 spring) × ส่วนเกินเหนือระดับล่าง · "
                        "tier 1 วัน 1-16 ฝน NWP Open-Meteo / tier 2 วัน 17-35 SEAS5 / tier 3 วัน 36-90 สถิติฤดูกาล · "
                        "ทั้งหมดเป็นการคาดการเชิงสถิติ พารามิเตอร์ตั้งมืออิงสถิติปี 2554 ยังไม่ได้ fit จากข้อมูลจริง "
