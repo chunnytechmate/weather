@@ -1,27 +1,27 @@
 {
- "built_at": "2026-09-28T21:02:19",
+ "built_at": "2026-09-29T19:44:17",
  "definition": "median ของค่าเฉลี่ยรายวัน ย้อนหลัง 60 วัน ตัด 7 วันล่าสุดออก",
  "stations": {
   "กรมชลประทานสามเสน": {
    "id": 2599,
-   "normal": 0.47,
+   "normal": 0.48,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
   },
   "คลองระพีพัฒน์แยกตก": {
    "id": 29,
-   "normal": 2.76,
-   "n_days": 53,
-   "source": "graph60d",
-   "offset": 0.0
-  },
-  "คลองระพีพัฒน์แยกใต้": {
-   "id": 36,
-   "normal": 2.95,
+   "normal": 2.77,
    "n_days": 53,
    "source": "graph60d",
    "offset": -0.0
+  },
+  "คลองระพีพัฒน์แยกใต้": {
+   "id": 36,
+   "normal": 2.96,
+   "n_days": 53,
+   "source": "graph60d",
+   "offset": 0.0
   },
   "คลองลัดบางยอ 1": {
    "id": 575567,
@@ -32,21 +32,21 @@
   },
   "คลองลาดพร้าว ท้ายปตร.คลอง2": {
    "id": 11,
-   "normal": 0.42,
+   "normal": 0.41,
    "n_days": 53,
    "source": "graph60d",
    "offset": -0.0
   },
   "คลองลาดพร้าว ปากคลอง2สายใต้": {
    "id": 8,
-   "normal": 1.01,
+   "normal": 1.02,
    "n_days": 53,
    "source": "graph60d",
    "offset": -0.0
   },
   "คลองหกวา ลำลูกกา คลอง8": {
    "id": 37,
-   "normal": 0.82,
+   "normal": 0.83,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
@@ -60,10 +60,10 @@
   },
   "ค่ายจิรประวัติ": {
    "id": 2795,
-   "normal": 19.08,
+   "normal": 19.09,
    "n_days": 53,
    "source": "graph60d",
-   "offset": 0.0
+   "offset": -0.0
   },
   "ชุมแสงสงคราม": {
    "id": 665,
@@ -74,17 +74,17 @@
   },
   "ท้ายเขื่อนเจ้าพระยา": {
    "id": 2744,
-   "normal": 5.73,
+   "normal": 7.71,
    "n_days": 53,
-   "source": "oldest10",
+   "source": "graph60d",
    "offset": 0.0
   },
   "บางปะอิน": {
    "id": 49,
-   "normal": 0.61,
+   "normal": 0.62,
    "n_days": 53,
    "source": "graph60d",
-   "offset": -0.0
+   "offset": 0.0
   },
   "บ้านบางแก้ว": {
    "id": 2626,
@@ -95,7 +95,7 @@
   },
   "บ้านป้อม": {
    "id": 2609,
-   "normal": 1.27,
+   "normal": 1.29,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
@@ -105,39 +105,39 @@
    "normal": -0.09,
    "n_days": 53,
    "source": "graph60d",
-   "offset": 0.0
+   "offset": -0.0
   },
   "พรหมบุรี": {
    "id": 68,
-   "normal": 1.17,
+   "normal": 1.45,
    "n_days": 53,
    "source": "oldest10",
    "offset": -0.0
   },
   "พระนครศรีอยุธยา": {
    "id": 39,
-   "normal": 1.02,
+   "normal": 1.05,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
   },
   "วัดเกยไชยเหนือ": {
    "id": 2821,
-   "normal": 21.26,
+   "normal": 22.86,
    "n_days": 53,
-   "source": "oldest10",
+   "source": "graph60d",
    "offset": 0.0
   },
   "สรรพยา": {
    "id": 89,
-   "normal": 4.74,
+   "normal": 5.43,
    "n_days": 53,
    "source": "oldest10",
    "offset": -0.0
   },
   "สวรรคโลก": {
    "id": 653,
-   "normal": 51.73,
+   "normal": 51.84,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
@@ -151,31 +151,31 @@
   },
   "สะพานธรรมจักร": {
    "id": 80,
-   "normal": 16.59,
+   "normal": 16.58,
    "n_days": 53,
    "source": "graph60d",
-   "offset": 0.0
+   "offset": -0.0
   },
   "สะพานนวลฉวี": {
    "id": 26,
-   "normal": 0.77,
+   "normal": 0.79,
    "n_days": 53,
    "source": "graph60d",
    "offset": 0.0
   },
   "สะพานเดชาติวงศ์": {
    "id": 568,
-   "normal": 18.72,
+   "normal": 18.73,
    "n_days": 53,
    "source": "graph60d",
    "offset": -0.0
   },
   "อ.เมืองน่าน": {
    "id": 1113291,
-   "normal": 194.8,
+   "normal": 194.78,
    "n_days": 50,
    "source": "graph60d",
-   "offset": -0.0
+   "offset": 0.0
   },
   "เชียงดาว": {
    "id": 414,
@@ -186,51 +186,18 @@
   },
   "เมืองอ่างทอง": {
    "id": 58,
-   "normal": 1.81,
+   "normal": 1.83,
    "n_days": 53,
    "source": "graph60d",
-   "offset": -0.0
+   "offset": 0.0
   },
   "เมืองแพร่": {
    "id": 489,
-   "normal": 145.67,
+   "normal": 145.71,
    "n_days": 53,
    "source": "graph60d",
-   "offset": -0.0
+   "offset": 0.0
   }
  },
- "canals": {
-  "ค.เปรมประชากร ถ.สรงประภา": {
-   "normal": 0.08,
-   "source": "graph60d"
-  },
-  "ปตร.คลองสองสายใต้": {
-   "normal": 0.17,
-   "source": "graph60d"
-  },
-  "ปตร.คลองพระยาสุเรนทร์": {
-   "normal": 0.45,
-   "source": "graph60d"
-  },
-  "ค.พระยาสุเรนทร์ ถ.จตุโชติ": {
-   "normal": 0.47,
-   "source": "graph60d"
-  },
-  "ค.เปรมประชากร-ค.บ้านใหม่": {
-   "normal": 0.06,
-   "source": "graph60d"
-  },
-  "ค.รางอ้อ-รางแก้ว ถ.พหลโยธิน": {
-   "normal": 0.13,
-   "source": "graph60d"
-  },
-  "ค.พระยาสุเรนทร์ ถ.หนองระแหง": {
-   "normal": 0.49,
-   "source": "graph60d"
-  },
-  "จุดวัดคลองสอง ตอนถนนพหลโยธิน": {
-   "normal": 0.1,
-   "source": "graph60d"
-  }
- }
+ "canals": {}
 }

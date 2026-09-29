@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
-"""โมเดล forecast ระดับน้ำรายวัน 30 วัน (lag-route + wave translation + exponential recession)
-   สร้าง fc_days.json ให้ build_dashboard ฝังลง tab เลือกวัน
+"""โมเดล forecast ระดับน้ำรายวัน 90 วัน (lag-route + wave translation + exponential recession)
+   สร้าง fc_days.json ให้ build_dashboard_v2 ฝังลง timeline
 
-   2 tier ของ input:
-   - tier 1 (วัน 1–16): ฝนจาก NWP Open-Meteo (forecast_days=16)
-   - tier 2 (วัน 17–30): ฝนจาก Seasonal API (ECMWF SEAS5) เรียบด้วย rolling mean 5 วัน
-     — ระดับความเชื่อมั่นต่างกัน แถบ lo/hi จึงกว้างขึ้นแบบมีเพดาน"""
+   3 tier ของ input (ความเชื่อมั่นต่างกัน แถบ lo/hi จึงกว้างขึ้นตาม tier):
+   - tier 1 (วัน 1-16): ฝนจาก NWP Open-Meteo (forecast_days=16)
+   - tier 2 (วัน 17-35): ฝนจาก Seasonal API (ECMWF SEAS5) เรียบด้วย rolling mean 5 วัน
+   - tier 3 (วัน 36-90): SEAS5 เสื่อมสภาพแล้ว อ่านเป็นแนวโน้มสถิติฤดูกาลเท่านั้น
+
+   ตัวแปรทั้งหมด: h0/momentum จากค่าอ่าน 18 ชม. + wave บางปะอิน + ฝนเหนือ lag 3 + ฝนท้องถิ่น
+   + แรงระบายเขื่อนภูมิพล/สิริกิติ์ lag 3-8 วัน (ใหม่, ยังไม่ calibrate) + ตัวคูณน้ำหนุนจากเฟสดวงจันทร์"""
 import json, glob, os, datetime, math
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HORIZON = 30          # จำนวนวัน forecast (วันถัดไป 1..30)
+HORIZON = 90          # จำนวนวัน forecast (วันถัดไป 1..90)
 NWP_DAYS = 16         # วันที่ใช้ NWP ได้ (Open-Meteo ให้สูงสุด 16)
+SEASONAL_TRUST = 35   # หลังจากวันนี้ SEAS5 เสื่อมลงเหลือระดับ "สถิติฤดูกาล" (tier 3)
 SEASONAL_SMOOTH = 5   # rolling-mean วัน สำหรับฝน seasonal
 
-# climatology สำรอง (มม./วัน) กรณี Seasonal API ล่ม — ค่าประมาณปกติต.ค./พ.ย. ของ กทม./ภาคเหนือตอนล่าง
-CLIMO = {"soi": {"10": 6.0, "11": 2.0}, "north": {"10": 4.5, "11": 2.5}}
+# climatology สำรอง (มม./วัน) กรณี Seasonal API ล่ม — ค่าประมาณปกติต.ค.-ธ.ค. ของ กทม./ภาคเหนือตอนล่าง
+CLIMO = {"soi": {"10": 6.0, "11": 2.0, "12": 0.5}, "north": {"10": 4.5, "11": 2.5, "12": 1.0}}
 
 def load_snaps():
     out = []
@@ -235,6 +239,23 @@ def build():
     wd = sn.get("wx_daily", {})
     soi_by_day = dict(zip(wd.get("time", []), wd.get("precipitation_sum", [])))
 
+    # ---- dam release ภูมิพล+สิริกิติ์ (ล้าน ลบ.ม./วัน): ตัวแปรใหม่ 28/9/69 ----
+    # แรงหนุนต่อเนื่องเมื่อเขื่อนระบายมากกว่าภาวะปกติ ลากถึงบางปะอิน ~3-8 วัน
+    # สัมประสิทธิ์อนุรักษ์นิยม + มี cap เพราะยังไม่ได้ calibrate กับเหตุการณ์จริง
+    DAM_REL_BASE = 40.0
+    dam_rel = 0.0
+    for d in sn.get("dams", []):
+        if any(k in d["name"] for k in ("ภูมิพล", "สิริกิติ์")) and d.get("released"):
+            try:
+                dam_rel += float(d["released"])
+            except (TypeError, ValueError):
+                pass
+
+    def dam_push(i):
+        if 3 <= i + 1 <= 8:
+            return min(0.04, max(0.0, dam_rel - DAM_REL_BASE) / 800.0)
+        return 0.0
+
     # ---- สถานะบางปะอิน (ต้นน้ำเข้าเมือง): momentum + ระดับเหนือตลิ่ง ----
     bpa = find("บางปะอิน")
     bank_bpa = bpa["bank"] if (bpa and bpa.get("bank")) else 2.62
@@ -249,7 +270,7 @@ def build():
         north_lag3, _ = north_rain((datetime.date.fromisoformat(d) - datetime.timedelta(days=3)).isoformat())
         soi_v, _ = soi_rain(d)
         tide = tide_mult(datetime.date.fromisoformat(d))
-        rise = north_lag3 * 0.0022 + bpa_cfg["rain_coef"] * soi_v + max(0.0, v_bpa) * (math.e ** (-i / 1.2))
+        rise = north_lag3 * 0.0022 + bpa_cfg["rain_coef"] * soi_v + max(0.0, v_bpa) * (math.e ** (-i / 1.2)) + dam_push(i)
         drain = bpa_cfg["K"] * tide * max(0.0, h - bpa_floor)
         if v_bpa < 0:
             drain += min(0.05, -v_bpa * 0.3)
@@ -303,11 +324,13 @@ def build():
 
         vals = []
         for i, d in enumerate(dates):
-            _, tier = soi_rain(d)
+            tier = 1 if i < NWP_DAYS else (2 if i < SEASONAL_TRUST else 3)
             band_cap = 1.00 if st["grp"] == "river" else 0.90
             band = min(0.08 + 0.09 * i, band_cap)
-            if tier == 2:
+            if tier >= 2:
                 band += min(0.30, 0.05 * (i - (NWP_DAYS - 1)))
+            if tier == 3:
+                band += min(0.60, 0.02 * (i - SEASONAL_TRUST + 1))
             h = path[i]
             vals.append({"d": d, "h": round(h, 2),
                          "lo": round(max(floors[i], h - band), 2),
@@ -343,14 +366,17 @@ def build():
                        "series": vals})
 
     result = {"built_at": sn["fetched_at"], "dates": dates, "nwp_days": NWP_DAYS,
-              "v_bpa": round(v_bpa, 3),
+              "seasonal_trust": SEASONAL_TRUST, "horizon": HORIZON,
+              "v_bpa": round(v_bpa, 3), "dam_release_mcm": round(dam_rel, 1),
               "bpa_excess": round(bpa_h0 - bank_bpa, 2),
               "north_by_day": {k: round(v, 1) for k, v in north_nwp.items()},
               "stations": out_st,
-              "note": ("โมเดล lag-route 30 วัน: h(t)=h(t-1)+rise−drain · rise = wave จากส่วนเกินเหนือตลิ่งบางปะอิน×0.30 (lag 1 วัน/ตอน) "
-                       "+ ฝนเหนือ lag 3 วัน + ฝนท้องถิ่น + momentum สถานี · drain = K × ตัวคูณน้ำหนุน (คำนวณจากเฟสดวงจันทร์: 1.0 น้ำแล้ง → ~0.45 spring) × ส่วนเกินเหนือระดับล่าง · "
-                       "tier 1 วัน 1–16 ใช้ฝน NWP Open-Meteo / tier 2 วัน 17–30 ใช้ Seasonal API (ECMWF SEAS5) เรียบ 5 วัน — ความเชื่อมั่นต่างกัน อ่าน tier 2 เป็น 'สถานการณ์คาดหมาย' ไม่ใช่ค่ารายวัน · "
-                       "แถบ lo/hi = ความไม่แน่นอนสะสม ±(8+9i) ซม. มีเพดาน 90–100 ซม. + ขยายเพิ่มช่วง tier 2")}
+              "note": ("โมเดล lag-route 90 วัน: h(t)=h(t-1)+rise−drain · rise = wave จากส่วนเกินเหนือตลิ่งบางปะอิน×0.30 (lag 1 วัน/ตอน) "
+                       "+ ฝนเหนือ lag 3 วัน + ฝนท้องถิ่น + momentum สถานี + แรงระบายเขื่อนภูมิพล+สิริกิติ์ lag 3-8 วัน (ใหม่ ยังไม่ calibrate) "
+                       "· drain = K × ตัวคูณน้ำหนุน (เฟสดวงจันทร์: 1.0 น้ำแล้ง → ~0.45 spring) × ส่วนเกินเหนือระดับล่าง · "
+                       "tier 1 วัน 1-16 ฝน NWP Open-Meteo / tier 2 วัน 17-35 SEAS5 / tier 3 วัน 36-90 สถิติฤดูกาล · "
+                       "ทั้งหมดเป็นการคาดการเชิงสถิติ พารามิเตอร์ตั้งมืออิงสถิติปี 2554 ยังไม่ได้ fit จากข้อมูลจริง "
+                       "· แถบ lo/hi = ความไม่แน่นอนสะสม ±(8+9i) ซม. มีเพดาน 90-100 ซม. + ขยายตาม tier")}
     out = os.path.join(BASE, "data", "fc_days.json")
     json.dump(result, open(out, "w"), ensure_ascii=False)
     print("OK", out, "| stations:", len(out_st), "| dates:", dates[0], "->", dates[-1])

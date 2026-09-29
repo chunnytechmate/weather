@@ -150,14 +150,14 @@ except Exception as e:
 
 wx = get("https://api.open-meteo.com/v1/forecast?latitude=13.918&longitude=100.651"
          "&hourly=precipitation&daily=precipitation_sum,precipitation_probability_max"
-         "&past_days=7&forecast_days=16&timezone=Asia%2FBangkok")
+         "&past_days=60&forecast_days=16&timezone=Asia%2FBangkok")
 
 wx_north = []
 for nm, lat, lon in NORTH_RAIN:
     for attempt in range(3):
         try:
             w = get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
-                    "&daily=precipitation_sum&past_days=1&forecast_days=16&timezone=Asia%2FBangkok")
+                    "&daily=precipitation_sum&past_days=60&forecast_days=16&timezone=Asia%2FBangkok")
             wx_north.append({"name": nm, "time": w["daily"]["time"],
                              "precip": w["daily"]["precipitation_sum"]})
             break
@@ -166,11 +166,11 @@ for nm, lat, lon in NORTH_RAIN:
                 print("WARN wx_north", nm, e)
             time.sleep(3)
 
-# Seasonal (ECMWF SEAS5) สำหรับ forecast เกิน 16 วัน — เก็บแค่ 35 วันแรกพอ
+# Seasonal (ECMWF SEAS5) สำหรับ forecast เกิน 16 วัน — เก็บ 92 วันให้ครบ horizon ใหม่
 def _seasonal(lat, lon):
     w = get("https://seasonal-api.open-meteo.com/v1/seasonal"
             f"?latitude={lat}&longitude={lon}&daily=precipitation_sum&timezone=Asia%2FBangkok")
-    return {"time": w["daily"]["time"][:35], "precip": w["daily"]["precipitation_sum"][:35]}
+    return {"time": w["daily"]["time"][:92], "precip": w["daily"]["precipitation_sum"][:92]}
 
 wx_seasonal = {}
 try:
